@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>A.StoreApp</name>
+    </assembly>
+    <members>
+        <member name="M:A.StoreApp.Controllers.AuthController.Login(Aplication.CQRS.Auth.Command.Request.LoginUserCommandRequest)">
+            <summary>
+            Login olmaq ucun endpoint
+            </summary>
+            <param name="userLogin"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

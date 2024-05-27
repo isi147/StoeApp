@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "GxWQWnfZpwJl2CFfkmt8lZP9LYrBHKKRGh8AX/4EB57RnovduvRwpZq0yK4lGxrziKSdnwHQ6QxGV84YH1O4EA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\isi\\Desktop\\MasterProject\\StoreApp\\Repository\\D.Repository.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\isi\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\isi\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\isi\\.nuget\\packages\\microsoft.identitymodel.abstractions\\7.5.2\\microsoft.identitymodel.abstractions.7.5.2.nupkg.sha512",
+    "C:\\Users\\isi\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\7.5.2\\microsoft.identitymodel.jsonwebtokens.7.5.2.nupkg.sha512",
+    "C:\\Users\\isi\\.nuget\\packages\\microsoft.identitymodel.logging\\7.5.2\\microsoft.identitymodel.logging.7.5.2.nupkg.sha512",
+    "C:\\Users\\isi\\.nuget\\packages\\microsoft.identitymodel.tokens\\7.5.2\\microsoft.identitymodel.tokens.7.5.2.nupkg.sha512",
+    "C:\\Users\\isi\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.5.2\\system.identitymodel.tokens.jwt.7.5.2.nupkg.sha512"
+  ],
+  "logs": []
+}

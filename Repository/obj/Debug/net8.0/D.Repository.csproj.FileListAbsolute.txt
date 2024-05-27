@@ -1,0 +1,15 @@
+C:\Users\isi\Desktop\MasterProject\StoreApp\Repository\bin\Debug\net8.0\D.Repository.deps.json
+C:\Users\isi\Desktop\MasterProject\StoreApp\Repository\bin\Debug\net8.0\D.Repository.dll
+C:\Users\isi\Desktop\MasterProject\StoreApp\Repository\bin\Debug\net8.0\D.Repository.pdb
+C:\Users\isi\Desktop\MasterProject\StoreApp\Repository\obj\Debug\net8.0\D.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\isi\Desktop\MasterProject\StoreApp\Repository\obj\Debug\net8.0\D.Repository.AssemblyInfoInputs.cache
+C:\Users\isi\Desktop\MasterProject\StoreApp\Repository\obj\Debug\net8.0\D.Repository.AssemblyInfo.cs
+C:\Users\isi\Desktop\MasterProject\StoreApp\Repository\obj\Debug\net8.0\D.Repository.csproj.CoreCompileInputs.cache
+C:\Users\isi\Desktop\MasterProject\StoreApp\Repository\obj\Debug\net8.0\D.Repository.dll
+C:\Users\isi\Desktop\MasterProject\StoreApp\Repository\obj\Debug\net8.0\refint\D.Repository.dll
+C:\Users\isi\Desktop\MasterProject\StoreApp\Repository\obj\Debug\net8.0\D.Repository.pdb
+C:\Users\isi\Desktop\MasterProject\StoreApp\Repository\obj\Debug\net8.0\ref\D.Repository.dll
+C:\Users\isi\Desktop\MasterProject\StoreApp\Repository\bin\Debug\net8.0\C.Domain.dll
+C:\Users\isi\Desktop\MasterProject\StoreApp\Repository\bin\Debug\net8.0\C.Domain.pdb
+C:\Users\isi\Desktop\MasterProject\StoreApp\Repository\obj\Debug\net8.0\D.Repository.csproj.AssemblyReference.cache
+C:\Users\isi\Desktop\MasterProject\StoreApp\Repository\obj\Debug\net8.0\D.Reposi.D58E6259.Up2Date

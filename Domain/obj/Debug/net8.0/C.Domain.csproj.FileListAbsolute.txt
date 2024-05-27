@@ -1,0 +1,12 @@
+C:\Users\isi\Desktop\MasterProject\StoreApp\Domain\bin\Debug\net8.0\C.Domain.deps.json
+C:\Users\isi\Desktop\MasterProject\StoreApp\Domain\bin\Debug\net8.0\C.Domain.dll
+C:\Users\isi\Desktop\MasterProject\StoreApp\Domain\bin\Debug\net8.0\C.Domain.pdb
+C:\Users\isi\Desktop\MasterProject\StoreApp\Domain\obj\Debug\net8.0\C.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\isi\Desktop\MasterProject\StoreApp\Domain\obj\Debug\net8.0\C.Domain.AssemblyInfoInputs.cache
+C:\Users\isi\Desktop\MasterProject\StoreApp\Domain\obj\Debug\net8.0\C.Domain.AssemblyInfo.cs
+C:\Users\isi\Desktop\MasterProject\StoreApp\Domain\obj\Debug\net8.0\C.Domain.csproj.CoreCompileInputs.cache
+C:\Users\isi\Desktop\MasterProject\StoreApp\Domain\obj\Debug\net8.0\C.Domain.dll
+C:\Users\isi\Desktop\MasterProject\StoreApp\Domain\obj\Debug\net8.0\refint\C.Domain.dll
+C:\Users\isi\Desktop\MasterProject\StoreApp\Domain\obj\Debug\net8.0\C.Domain.pdb
+C:\Users\isi\Desktop\MasterProject\StoreApp\Domain\obj\Debug\net8.0\ref\C.Domain.dll
+C:\Users\isi\Desktop\MasterProject\StoreApp\Domain\obj\Debug\net8.0\C.Domain.csproj.AssemblyReference.cache

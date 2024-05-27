@@ -1,0 +1,11 @@
+C:\Users\isi\Desktop\MasterProject\StoreApp\Common\bin\Debug\net8.0\B.Common.deps.json
+C:\Users\isi\Desktop\MasterProject\StoreApp\Common\bin\Debug\net8.0\B.Common.dll
+C:\Users\isi\Desktop\MasterProject\StoreApp\Common\bin\Debug\net8.0\B.Common.pdb
+C:\Users\isi\Desktop\MasterProject\StoreApp\Common\obj\Debug\net8.0\B.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\isi\Desktop\MasterProject\StoreApp\Common\obj\Debug\net8.0\B.Common.AssemblyInfoInputs.cache
+C:\Users\isi\Desktop\MasterProject\StoreApp\Common\obj\Debug\net8.0\B.Common.AssemblyInfo.cs
+C:\Users\isi\Desktop\MasterProject\StoreApp\Common\obj\Debug\net8.0\B.Common.csproj.CoreCompileInputs.cache
+C:\Users\isi\Desktop\MasterProject\StoreApp\Common\obj\Debug\net8.0\B.Common.dll
+C:\Users\isi\Desktop\MasterProject\StoreApp\Common\obj\Debug\net8.0\refint\B.Common.dll
+C:\Users\isi\Desktop\MasterProject\StoreApp\Common\obj\Debug\net8.0\B.Common.pdb
+C:\Users\isi\Desktop\MasterProject\StoreApp\Common\obj\Debug\net8.0\ref\B.Common.dll
