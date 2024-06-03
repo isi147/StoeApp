@@ -5,7 +5,7 @@ using MediatR;
 
 namespace Aplication.CQRS.Categories.Command.Request;
 
-public class UpdateCategoryCommandRequest:IRequest<ResponseModel<UpdateCategoryCommandResponse>>
+public class UpdateCategoryCommandRequest:IRequest
 {
     public int Id { get; set; }
     public string Name { get; set; }

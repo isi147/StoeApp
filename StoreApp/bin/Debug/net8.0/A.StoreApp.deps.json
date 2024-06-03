@@ -566,6 +566,7 @@
       },
       "E.DAL.SqlServer/1.0.0": {
         "dependencies": {
+          "B.Common": "1.0.0",
           "D.Repository": "1.0.0",
           "Dapper": "2.1.35",
           "Microsoft.Data.SqlClient": "5.2.0",

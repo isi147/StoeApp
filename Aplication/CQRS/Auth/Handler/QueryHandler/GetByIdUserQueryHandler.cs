@@ -1,6 +1,5 @@
 ﻿using Aplication.CQRS.Auth.Query.Request;
 using Aplication.CQRS.Auth.Query.Response;
-using Common.GlobalExceptionsResponses;
 using Common.GlobalExceptionsResponses.Generics;
 using MediatR;
 using Repository.Common;
@@ -26,6 +25,6 @@ public class GetByIdUserQueryHandler : IRequestHandler<GetByIdUserQueryRequest, 
 			Surname = curentUser.Surname,
 			Email = curentUser.Email
 		};
-		return new ResponseModel<GetByIdUseryQueryResponse> { Data = mappedUser };
+		return new ResponseModel<GetByIdUseryQueryResponse>(mappedUser);
 	}
 }

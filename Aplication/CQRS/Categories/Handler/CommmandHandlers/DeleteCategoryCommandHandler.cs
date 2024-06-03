@@ -6,7 +6,7 @@ using Repository.Common;
 
 namespace Aplication.CQRS.Categories.Handler.CommmandHandlers;
 
-public class DeleteCategoryCommandHandler:IRequestHandler<DeleteCategoryCommandRequest,ResponseModel<DeleteCategoryCommandResponse>>
+public class DeleteCategoryCommandHandler:IRequestHandler<DeleteCategoryCommandRequest>
 {
 	private readonly IUnitOfWork _unitOfWork;
 
@@ -15,10 +15,10 @@ public class DeleteCategoryCommandHandler:IRequestHandler<DeleteCategoryCommandR
 		_unitOfWork = unitOfWork;
 	}
 
-	public async Task<ResponseModel<DeleteCategoryCommandResponse>> Handle(DeleteCategoryCommandRequest request, CancellationToken cancellationToken)
+	public async Task Handle(DeleteCategoryCommandRequest request, CancellationToken cancellationToken)
 	{
 		_unitOfWork.CategoryRepository.Delete(request.Id);
 		await _unitOfWork.SaveChangesAsync();
-		return new ResponseModel<DeleteCategoryCommandResponse> ();
+
 	}
 }

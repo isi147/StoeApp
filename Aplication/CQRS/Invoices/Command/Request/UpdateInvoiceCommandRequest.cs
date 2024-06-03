@@ -7,7 +7,7 @@ using MediatR;
 
 namespace Aplication.CQRS.Invoices.Command.Request;
 
-public class UpdateInvoiceCommandRequest : IRequest<ResponseModel<UpdateInvoiceCommandResponse>>
+public class UpdateInvoiceCommandRequest : IRequest
 {
 	public int Id { get; set; }
 	public int CashierId { get; set; }

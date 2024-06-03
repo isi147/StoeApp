@@ -6,7 +6,7 @@ using Repository.Common;
 
 namespace Aplication.CQRS.Products.Handler.CommandHandlers;
 
-public class DeleteProductCommandHandler : IRequestHandler<DeleteProductCommandRequest, ResponseModel<DeleteProductCommandResponse>>
+public class DeleteProductCommandHandler : IRequestHandler<DeleteProductCommandRequest>
 {
 	private readonly IUnitOfWork _unitOfWork;
 
@@ -15,10 +15,9 @@ public class DeleteProductCommandHandler : IRequestHandler<DeleteProductCommandR
 		_unitOfWork = unitOfWork;
 	}
 
-	public async Task<ResponseModel<DeleteProductCommandResponse>> Handle(DeleteProductCommandRequest request, CancellationToken cancellationToken)
+	public async Task Handle(DeleteProductCommandRequest request, CancellationToken cancellationToken)
 	{
 		_unitOfWork.ProductRepository.Delete(request.Id);
 		await _unitOfWork.SaveChangesAsync();
-		return new ResponseModel<DeleteProductCommandResponse>();
 	}
 }

@@ -7,7 +7,7 @@ using Repository.Common;
 
 namespace Aplication.CQRS.Invoices.Handler.CommandHandlers;
 
-public class UpdateInvoiceCommandHandler : IRequestHandler<UpdateInvoiceCommandRequest, ResponseModel<UpdateInvoiceCommandResponse>>
+public class UpdateInvoiceCommandHandler : IRequestHandler<UpdateInvoiceCommandRequest>
 {
 	readonly private IUnitOfWork _unitOfWork;
 
@@ -16,7 +16,7 @@ public class UpdateInvoiceCommandHandler : IRequestHandler<UpdateInvoiceCommandR
 		_unitOfWork = unitOfWork;
 	}
 
-	public async Task<ResponseModel<UpdateInvoiceCommandResponse>> Handle(UpdateInvoiceCommandRequest request, CancellationToken cancellationToken)
+	public async Task Handle(UpdateInvoiceCommandRequest request, CancellationToken cancellationToken)
 	{
 		var currentInvoice = await _unitOfWork.InvoiceRepository.GetByIdAsync(request.Id);
 		if (currentInvoice == null)
@@ -34,6 +34,6 @@ public class UpdateInvoiceCommandHandler : IRequestHandler<UpdateInvoiceCommandR
 
 		_unitOfWork.InvoiceRepository.Update(currentInvoice);
 		await _unitOfWork.SaveChangesAsync();
-		return new ResponseModel<UpdateInvoiceCommandResponse>();
+
 	}
 }

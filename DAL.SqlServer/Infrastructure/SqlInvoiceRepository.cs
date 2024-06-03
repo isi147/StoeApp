@@ -59,6 +59,11 @@ public class SqlInvoiceRepository : BaseSqlRepository, IInvoiceRepository
 		return invoice;
 	}
 
+	public IQueryable<Invoice> GetBySellInvoiceIdAsync(int id)
+	{
+		return _context.Invoices.Where(i => i.IsDeleted == false && i.SellInvoiceId == id).AsNoTracking();
+	}
+
 	public void Update(Invoice invoice)
 	{
 		invoice.UpdatedDate = DateTime.Now;

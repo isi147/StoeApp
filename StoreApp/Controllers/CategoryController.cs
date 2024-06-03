@@ -1,4 +1,5 @@
-﻿using Aplication.CQRS.Categories.Command.Request;
+﻿using A.StoreApp.Constants;
+using Aplication.CQRS.Categories.Command.Request;
 using Aplication.CQRS.Categories.Query.Request;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +8,7 @@ namespace A.StoreApp.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-[Authorize(Roles ="Admin")]
+[Authorize(Roles = $"{UserRoles.Admin},{UserRoles.Cashier}")]
 public class CategoryController : BaseController
 {
 	[HttpPost]
@@ -17,7 +18,7 @@ public class CategoryController : BaseController
 	}
 
 	[HttpGet]
-	[Authorize(Roles = "Admin,Cashier")]
+	[Authorize(Roles = $"{UserRoles.Admin},{UserRoles.Cashier}")]
 
 	public async Task<IActionResult> GetAll([FromQuery] GetAllCategoryQueryRequest request)
 	{
@@ -35,13 +36,15 @@ public class CategoryController : BaseController
 	public async Task<IActionResult> Delete(int id)
 	{
 		var requst = new DeleteCategoryCommandRequest(id);
-		return Ok(await Sender.Send(requst));
+		await Sender.Send(requst);
+		return Ok();
 	}
 
 	[HttpPut]
 	public async Task<IActionResult> Update(UpdateCategoryCommandRequest request)// id gotursun
 	{
-		return Ok(await Sender.Send(request));
+		await Sender.Send(request);
+		return Ok();
 	}
 
 

@@ -1,4 +1,4 @@
-﻿	using Aplication.CQRS.Products.Command.Request;
+﻿using Aplication.CQRS.Products.Command.Request;
 using Aplication.CQRS.Products.Command.Response;
 using Common.Exceptions;
 using Common.GlobalExceptionsResponses;
@@ -8,7 +8,7 @@ using Repository.Common;
 
 namespace Aplication.CQRS.Products.Handler.CommandHandlers;
 
-public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommandRequest, ResponseModel<UpdateProductCommandResponse>>
+public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommandRequest>
 {
 	private readonly IUnitOfWork _unitOfWork;
 
@@ -17,7 +17,7 @@ public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommandR
 		_unitOfWork = unitOfWork;
 	}
 
-	public async Task<ResponseModel<UpdateProductCommandResponse>> Handle(UpdateProductCommandRequest request, CancellationToken cancellationToken)
+	public async Task Handle(UpdateProductCommandRequest request, CancellationToken cancellationToken)
 	{
 		var currentProduct = await _unitOfWork.ProductRepository.GetByIdAsync(request.Id);
 		if (currentProduct == null)
@@ -32,7 +32,6 @@ public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommandR
 
 		_unitOfWork.ProductRepository.Update(currentProduct);
 		await _unitOfWork.SaveChangesAsync();
-		return new ResponseModel<UpdateProductCommandResponse> ();
-	}
 
+	}
 }

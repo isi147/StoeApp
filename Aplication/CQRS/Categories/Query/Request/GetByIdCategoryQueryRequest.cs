@@ -6,12 +6,12 @@ using MediatR;
 
 namespace Aplication.CQRS.Categories.Query.Request;
 
-public class GetByIdCategoryQueryRequest:IRequest<ResponseModel<GetByIdCategoryQueryResponse>>
+public class GetByIdCategoryQueryRequest : IRequest<ResponseModel<GetByIdCategoryQueryResponse>>
 {
 	public int Id { get; set; }
 
 	public GetByIdCategoryQueryRequest(int id)
-    {
-        Id = id;
-    }
+	{
+		Id = id;
+	}
 }

@@ -17,3 +17,6 @@ C:\Users\isi\Desktop\MasterProject\StoreApp\DAL.SqlServer\bin\Debug\net8.0\D.Rep
 C:\Users\isi\Desktop\MasterProject\StoreApp\DAL.SqlServer\bin\Debug\net8.0\C.Domain.pdb
 C:\Users\isi\Desktop\MasterProject\StoreApp\DAL.SqlServer\obj\Debug\net8.0\E.DAL.Sq.EADA7002.Up2Date
 C:\Users\isi\Desktop\MasterProject\StoreApp\DAL.SqlServer\obj\Debug\net8.0\E.DAL.SqlServer.genruntimeconfig.cache
+C:\Users\isi\Desktop\MasterProject\StoreApp\DAL.SqlServer\obj\Debug\net8.0\E.DAL.SqlServer.sourcelink.json
+C:\Users\isi\Desktop\MasterProject\StoreApp\DAL.SqlServer\bin\Debug\net8.0\B.Common.dll
+C:\Users\isi\Desktop\MasterProject\StoreApp\DAL.SqlServer\bin\Debug\net8.0\B.Common.pdb

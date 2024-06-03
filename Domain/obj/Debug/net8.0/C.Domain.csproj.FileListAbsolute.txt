@@ -10,3 +10,4 @@ C:\Users\isi\Desktop\MasterProject\StoreApp\Domain\obj\Debug\net8.0\refint\C.Dom
 C:\Users\isi\Desktop\MasterProject\StoreApp\Domain\obj\Debug\net8.0\C.Domain.pdb
 C:\Users\isi\Desktop\MasterProject\StoreApp\Domain\obj\Debug\net8.0\ref\C.Domain.dll
 C:\Users\isi\Desktop\MasterProject\StoreApp\Domain\obj\Debug\net8.0\C.Domain.csproj.AssemblyReference.cache
+C:\Users\isi\Desktop\MasterProject\StoreApp\Domain\obj\Debug\net8.0\C.Domain.sourcelink.json

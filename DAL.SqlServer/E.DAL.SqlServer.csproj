@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Common\B.Common.csproj" />
     <ProjectReference Include="..\Repository\D.Repository.csproj" />
   </ItemGroup>
 

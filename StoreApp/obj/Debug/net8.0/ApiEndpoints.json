@@ -341,9 +341,9 @@
   },
   {
     "ContainingType": "A.StoreApp.Controllers.ProductController",
-    "Method": "Delete",
+    "Method": "GetById",
     "RelativePath": "api/Product/{id}",
-    "HttpMethod": "DELETE",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -357,16 +357,16 @@
   },
   {
     "ContainingType": "A.StoreApp.Controllers.ProductController",
-    "Method": "GetById",
-    "RelativePath": "api/Product/getById",
-    "HttpMethod": "GET",
+    "Method": "Delete",
+    "RelativePath": "api/Product/{id}",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

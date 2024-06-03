@@ -1,7 +1,6 @@
 ﻿using Aplication.CQRS.Invoices.Command.Request;
 using Aplication.CQRS.Invoices.Command.Response;
 using Aplication.DTOs.InvoiceItemDtos;
-using Common.Exceptions;
 using Common.GlobalExceptionsResponses.Generics;
 using Domain.Entities;
 using MediatR;
@@ -21,41 +20,6 @@ public class CreateRefundInvoiceCommandHandler : IRequestHandler<CreateRefundInv
 	public async Task<ResponseModel<CreateRefundInvoiceCommandResponse>> Handle(CreateRefundInvoiceCommandRequest request, CancellationToken cancellationToken)
 	{
 		var currentInvoice = await _unitOfWork.InvoiceRepository.GetByIdAsync(request.SellInvoiceId);
-
-
-		/*if (currentInvoice.Id != request.SellInvoiceId || currentInvoice.InvoiceItems.Count() != request.InvoiceItems.Count()
-			|| request.InvoiceItems.Any(m => !currentInvoice.InvoiceItems.Any(x => x.ProductId == m.ProductId)))
-		{
-			
-		}*/
-
-		//if (currentInvoice.Id != request.SellInvoiceId)
-		//{
-		//	BadRequestException badRequestException = new BadRequestException();
-
-		//}
-
-
-		//foreach (var item in currentInvoice.InvoiceItems)
-		//{
-		//	var initialItem = request.InvoiceItems.FirstOrDefault(m => m.ProductId == item.ProductId);
-
-		//	if (initialItem != null)
-		//	{
-		//		if (initialItem.Quantity > item.Quantity)
-		//		{
-		//			throw new BadRequestException();
-		//		}
-		//		refundedProducts.Add(initialItem);
-
-		//		request.InvoiceItems.Remove(initialItem);
-		//	}
-		//}
-
-		//if (request.InvoiceItems.Any())
-		//{
-		//	BadRequestException badRequestException = new BadRequestException();
-		//}
 
 		var newInvoice = new Invoice
 		{
@@ -96,6 +60,6 @@ public class CreateRefundInvoiceCommandHandler : IRequestHandler<CreateRefundInv
 			}
 		));
 
-		return new ResponseModel<CreateRefundInvoiceCommandResponse> { Data = response };
+		return new ResponseModel<CreateRefundInvoiceCommandResponse>(response);
 	}
 }

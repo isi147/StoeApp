@@ -9,3 +9,4 @@ C:\Users\isi\Desktop\MasterProject\StoreApp\Common\obj\Debug\net8.0\B.Common.dll
 C:\Users\isi\Desktop\MasterProject\StoreApp\Common\obj\Debug\net8.0\refint\B.Common.dll
 C:\Users\isi\Desktop\MasterProject\StoreApp\Common\obj\Debug\net8.0\B.Common.pdb
 C:\Users\isi\Desktop\MasterProject\StoreApp\Common\obj\Debug\net8.0\ref\B.Common.dll
+C:\Users\isi\Desktop\MasterProject\StoreApp\Common\obj\Debug\net8.0\B.Common.sourcelink.json

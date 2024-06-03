@@ -34,9 +34,9 @@ public class GetByIdInvoiceQueryHandler : IRequestHandler<GetByIdInvoiceQueryReq
 				ProductId = item.ProductId,
 				Quantity = item.Quantity,
 			}).ToList()
-			
+
 		};
-		return new ResponseModel<GetByIdInvoiceQueryResponse> { Data = mappedInvoice };
+		return new ResponseModel<GetByIdInvoiceQueryResponse>(mappedInvoice);
 
 	}
 }

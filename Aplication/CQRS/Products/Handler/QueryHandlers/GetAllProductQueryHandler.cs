@@ -1,12 +1,13 @@
 ﻿using Aplication.CQRS.Products.Query.Request;
 using Aplication.CQRS.Products.Query.Response;
 using Common.GlobalExceptionsResponses.Generics;
+using Domain.Extensions;
 using MediatR;
 using Repository.Common;
 
 namespace Aplication.CQRS.Products.Handler.QueryHandlers;
 
-public class GetAllProductQueryHandler : IRequestHandler<GetAllProductQueryRequest, ResponseModelPagination<GetAllProductQueryResponse>>
+public class GetAllProductQueryHandler : IRequestHandler<GetAllProductQueryRequest, Pagination<GetAllProductQueryResponse>>
 {
 	private readonly IUnitOfWork _unitOfWork;
 
@@ -15,25 +16,25 @@ public class GetAllProductQueryHandler : IRequestHandler<GetAllProductQueryReque
 		_unitOfWork = unitOfWork;
 	}
 
-	public async Task<ResponseModelPagination<GetAllProductQueryResponse>> Handle(GetAllProductQueryRequest request, CancellationToken cancellationToken)
+	public async Task<Pagination<GetAllProductQueryResponse>> Handle(GetAllProductQueryRequest request, CancellationToken cancellationToken)
 	{
 
 		var categories = _unitOfWork.ProductRepository.GetAll();
 		var totalCount = categories.Count();
-		if (!categories.Any())
-		{
-			return new ResponseModelPagination<GetAllProductQueryResponse>
-			{
-				Data = new Pagination<GetAllProductQueryResponse>
-				{
-					Data = { },
-					TotalDataCount = totalCount,
-				},
+		//if (!categories.Any())
+		//{
+		//	return new Pagination<GetAllProductQueryResponse>
+		//	{
+		//		Data = new Pagination<GetAllProductQueryResponse>
+		//		{
+		//			Data = { },
+		//			TotalDataCount = totalCount,
+		//		},
 
-				Errors = []
-			};
-		}
-		categories = categories.Skip((request.Page - 1) * request.Limit).Take(request.Limit);
+		//		Errors = []
+		//	};
+		//}
+		categories = categories.PageBy(request.Page, request.Limit);
 		var list = new List<GetAllProductQueryResponse>();
 		foreach (var category in categories)
 		{
@@ -48,9 +49,7 @@ public class GetAllProductQueryHandler : IRequestHandler<GetAllProductQueryReque
 			};
 			list.Add(mappedCategory);
 		}
-		return new ResponseModelPagination<GetAllProductQueryResponse>
-		{
-			Data = new Pagination<GetAllProductQueryResponse> { Data = list, TotalDataCount = totalCount }
-		};
+		return new Pagination<GetAllProductQueryResponse>(list, totalCount, request.Page, request.Limit);
+
 	}
 }

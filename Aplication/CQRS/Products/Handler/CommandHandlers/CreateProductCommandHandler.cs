@@ -39,7 +39,7 @@ public class CreateProductCommandHandler : IRequestHandler<CreateProductCommandR
 
 		};
 
-		return new ResponseModel<CreateProductCommandResponse> { Data = response };
+		return new ResponseModel<CreateProductCommandResponse>(response);
 	}
 
 }

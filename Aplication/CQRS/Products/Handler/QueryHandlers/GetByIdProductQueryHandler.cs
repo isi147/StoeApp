@@ -26,7 +26,7 @@ public class GetByIdProductQueryHandler : IRequestHandler<GetByIdProductQueryReq
 			Price = currentProduct.Price 
 		};
 
-		return new ResponseModel<GetByIdProductQueryResponse> {  Data = mappedProduct};
+		return new ResponseModel<GetByIdProductQueryResponse>(mappedProduct);
 
 	}
 }

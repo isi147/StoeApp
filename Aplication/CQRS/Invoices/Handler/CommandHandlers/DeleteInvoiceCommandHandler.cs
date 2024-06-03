@@ -6,7 +6,7 @@ using Repository.Common;
 
 namespace Aplication.CQRS.Invoices.Handler.CommandHandlers;
 
-public class DeleteInvoiceCommandHandler : IRequestHandler<DeleteInvoiceCommandRequest, ResponseModel<DeleteInvoiceCommandResponse>>
+public class DeleteInvoiceCommandHandler : IRequestHandler<DeleteInvoiceCommandRequest>
 {
 	private readonly IUnitOfWork _unitOfWork;
 
@@ -15,10 +15,9 @@ public class DeleteInvoiceCommandHandler : IRequestHandler<DeleteInvoiceCommandR
 		_unitOfWork = unitOfWork;
 	}
 
-	public async Task<ResponseModel<DeleteInvoiceCommandResponse>> Handle(DeleteInvoiceCommandRequest request, CancellationToken cancellationToken)
+	public async Task Handle(DeleteInvoiceCommandRequest request, CancellationToken cancellationToken)
 	{
 		_unitOfWork.InvoiceRepository.Delete(request.Id);
 		await _unitOfWork.SaveChangesAsync();
-		return new ResponseModel<DeleteInvoiceCommandResponse> ();
 	}
 }

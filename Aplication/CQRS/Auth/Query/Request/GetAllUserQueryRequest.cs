@@ -5,7 +5,7 @@ using MediatR;
 
 namespace Aplication.CQRS.Auth.Query.Request;
 
-public class GetAllUserQueryRequest : IRequest<ResponseModelPagination<GetAllUserQueryResponse>>
+public class GetAllUserQueryRequest : IRequest<Pagination<GetAllUserQueryResponse>>
 {
 	public int Limit { get; set; } = 10;
 	public int Page { get; set; } = 1;

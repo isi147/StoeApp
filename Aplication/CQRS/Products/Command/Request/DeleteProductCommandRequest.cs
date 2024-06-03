@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Aplication.CQRS.Products.Command.Request;
 
-public class DeleteProductCommandRequest:IRequest<ResponseModel<DeleteProductCommandResponse>>
+public class DeleteProductCommandRequest:IRequest
 {
     public int Id { get; set; }
 

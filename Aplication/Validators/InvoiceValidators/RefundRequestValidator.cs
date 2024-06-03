@@ -31,12 +31,20 @@ public class RefundRequestValidator : AbstractValidator<CreateRefundInvoiceComma
 		RuleFor(request => request)
 			.MustAsync(async (request, cancellationToken) =>
 			{
+				var refundInvoices = _unitOfWork.InvoiceRepository.GetBySellInvoiceIdAsync(request.SellInvoiceId);
+
 				var sellInvoice = await _unitOfWork.InvoiceRepository.GetByIdAsync(request.SellInvoiceId);
+				//var products = sellInvoice.InvoiceItems.Select(i=>new )
 				return sellInvoice != null && request.InvoiceItems.All(item =>
 				{
 					var initialItem = sellInvoice.InvoiceItems.FirstOrDefault(i => i.ProductId == item.ProductId);
-					return initialItem != null && item.Quantity <= initialItem.Quantity;
+					var refundedProductQuantity = refundInvoices.SelectMany(i => i.InvoiceItems).Where(i => i.ProductId == item.ProductId).Sum(i => i.Quantity);
+
+					return initialItem != null && item.Quantity <= (initialItem.Quantity - refundedProductQuantity);
 				});
+
+
+
 			})
 			.WithMessage("Refunded quantity cannot exceed the initially purchased quantity.");
 	}

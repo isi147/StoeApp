@@ -17,3 +17,4 @@ C:\Users\isi\Desktop\MasterProject\StoreApp\Aplication\obj\Debug\net8.0\F.Aplica
 C:\Users\isi\Desktop\MasterProject\StoreApp\Aplication\obj\Debug\net8.0\F.Aplica.D4DF765B.Up2Date
 C:\Users\isi\Desktop\MasterProject\StoreApp\Aplication\bin\Debug\net8.0\B.Common.dll
 C:\Users\isi\Desktop\MasterProject\StoreApp\Aplication\bin\Debug\net8.0\B.Common.pdb
+C:\Users\isi\Desktop\MasterProject\StoreApp\Aplication\obj\Debug\net8.0\F.Aplication.sourcelink.json

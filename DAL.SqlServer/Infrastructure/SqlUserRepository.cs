@@ -1,4 +1,5 @@
-﻿using DAL.SqlServer.Context;
+﻿using Common.Exceptions;
+using DAL.SqlServer.Context;
 using Dapper;
 using Domain.Entity;
 using Microsoft.EntityFrameworkCore;
@@ -17,7 +18,7 @@ public class SqlUserRepository : BaseSqlRepository, IUserRepository
 
 	public void Delete(int id)
 	{
-		var currentUser = _context.Users.FirstOrDefault(x => x.Id == id);
+		var currentUser = _context.Users.FirstOrDefault(x => x.Id == id) ?? throw new NotFoundException();
 		currentUser.IsDeleted = true;
 		currentUser.DeletedDate = DateTime.Now;
 	}
@@ -31,14 +32,14 @@ public class SqlUserRepository : BaseSqlRepository, IUserRepository
 	{
 		var sql = $@"SELECT *FROM Users Where Id = @id AND IsDeleted = 0";
 		using var con = OpenConnection();
-		return await con.QueryFirstOrDefaultAsync<User>(sql, new { id });
+		return await con.QueryFirstOrDefaultAsync<User>(sql, new { id }) ?? throw new NotFoundException();
 	}
 
 	public async Task<User> GetUserByEmailAsync(string email)
 	{
 		var sql = $@"SELECT *FROM Users Where email = @email AND IsDeleted = 0";
 		using var con = OpenConnection();
-		return await con.QueryFirstOrDefaultAsync<User>(sql, new { email });
+		return await con.QueryFirstOrDefaultAsync<User>(sql, new { email }) ?? throw new NotFoundException();
 	}
 
 	public async Task RegisterAsync(User user)

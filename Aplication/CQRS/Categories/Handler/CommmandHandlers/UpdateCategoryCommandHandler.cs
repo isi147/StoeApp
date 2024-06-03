@@ -8,7 +8,7 @@ using Repository.Common;
 
 namespace Aplication.CQRS.Categories.Handler.CommmandHandlers;
 
-public class UpdateCategoryCommandHandler : IRequestHandler<UpdateCategoryCommandRequest, ResponseModel<UpdateCategoryCommandResponse>>
+public class UpdateCategoryCommandHandler : IRequestHandler<UpdateCategoryCommandRequest>
 {
 	private readonly IUnitOfWork _unitOfWork;
 
@@ -17,19 +17,12 @@ public class UpdateCategoryCommandHandler : IRequestHandler<UpdateCategoryComman
 		_unitOfWork = unitOfWork;
 	}
 
-	public async Task<ResponseModel<UpdateCategoryCommandResponse>> Handle(UpdateCategoryCommandRequest request, CancellationToken cancellationToken)
+	public async Task Handle(UpdateCategoryCommandRequest request, CancellationToken cancellationToken)
 	{
 		var currentCategory = await _unitOfWork.CategoryRepository.GetByIdAsync(request.Id);
-		if (currentCategory == null)
-		{
-			throw new BadRequestException();
-
-		}
 		currentCategory.Name = request.Name;
-
 		_unitOfWork.CategoryRepository.Update(currentCategory);
 		await _unitOfWork.SaveChangesAsync();
-		return new ResponseModel<UpdateCategoryCommandResponse> ();
 	}
 }
 

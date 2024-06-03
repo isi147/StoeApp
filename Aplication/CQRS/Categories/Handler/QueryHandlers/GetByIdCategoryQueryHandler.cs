@@ -26,6 +26,6 @@ public class GetByIdCategoryQueryHandler : IRequestHandler<GetByIdCategoryQueryR
 
 		};
 
-		return new ResponseModel<GetByIdCategoryQueryResponse> { Data = mappedCategory };
+		return new ResponseModel<GetByIdCategoryQueryResponse>(mappedCategory);
 	}
 }

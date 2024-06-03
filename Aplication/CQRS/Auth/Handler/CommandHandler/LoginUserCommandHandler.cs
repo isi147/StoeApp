@@ -28,13 +28,16 @@ public class LoginUserCommandHandler : IRequestHandler<LoginUserCommandRequest, 
 	{
 		var loginProvider = Guid.NewGuid().ToString(); //Muxtelif brovzerleri ferqlendirmek ucun
 		var user = await _unitOfWork.UserRepository.GetUserByEmailAsync(request.Email);
-		if (user == null)
-			throw new BadRequestException();
+
 
 		var hashedPassword = PasswordHasher.ComputeStringToSha256Hash(request.Password);
 
-		if (user == null && (hashedPassword == null))
-			throw new BadRequestException();
+		//if ( (hashedPassword == null)) // loginde validator ile yoxla 
+		//	throw new BadRequestException();
+		if (user.PasswordHash != user.PasswordHash)
+		{
+			throw new BadRequestException();//bu yoxlam aucndur eslinde bu olmalidi InvalideCredentialsException
+		}
 
 		var authClaims = new List<Claim>
 		{
@@ -54,9 +57,6 @@ public class LoginUserCommandHandler : IRequestHandler<LoginUserCommandRequest, 
 			Token = tokenString,
 			Expiration = token.ValidTo
 		};
-		return new ResponseModel<LoginUserCommandResponse>
-		{
-			Data = loginCommandResponse
-		};
+		return new ResponseModel<LoginUserCommandResponse>(loginCommandResponse);
 	}
 }

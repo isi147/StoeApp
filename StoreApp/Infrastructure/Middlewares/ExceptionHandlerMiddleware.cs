@@ -23,23 +23,24 @@ public class ExceptionHandlerMiddleware
 		}
 		catch (BadRequestException error)
 		{
-			var message = new List<string>() { error.Message };
+			var message = new ErrorResponse(error.Message, ErrorType.BAD_REQUEST);
 			await WriteError(context, HttpStatusCode.BadRequest, message);
 		}
 		catch (ValidationException error)
 		{
-			var message = new List<string>() { error.Message };
+			var message = new ErrorResponse(error.Message, ErrorType.VALIDATION_ERROR);
 			await WriteError(context, HttpStatusCode.BadRequest, message);
 		}
-
-		static async Task WriteError(HttpContext context, HttpStatusCode statusCode, List<string> messages)
+		//not found exception tut
+		static async Task WriteError(HttpContext context, HttpStatusCode hhtpStatusCode, ErrorResponse errorResponse)
 		{
+			var statusCode = (int)hhtpStatusCode;
 			context.Response.Clear();
-			context.Response.StatusCode = (int)statusCode;
+			context.Response.StatusCode = statusCode;
 			context.Response.ContentType = "application/json; charset=utf-8";
 
 			var options = new JsonSerializerOptions() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
-			var json = JsonSerializer.Serialize(new ResponseModel(messages), options);
+			var json = JsonSerializer.Serialize(errorResponse, options);
 			await context.Response.WriteAsync(json);
 		}
 	}

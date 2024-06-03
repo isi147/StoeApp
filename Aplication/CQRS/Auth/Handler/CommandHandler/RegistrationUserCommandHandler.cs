@@ -46,6 +46,6 @@ public class RegistrationUserCommandHandler : IRequestHandler<RegistrationUserCo
 			Email = newUser.Email,
 			UserType = newUser.UserType,
 		};
-		return new ResponseModel<RegistrationUserCommandResponse> { Data = response };
+		return new ResponseModel<RegistrationUserCommandResponse>(response);
 	}
 }

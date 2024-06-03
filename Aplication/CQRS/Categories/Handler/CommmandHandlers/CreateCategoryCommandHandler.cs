@@ -7,7 +7,7 @@ using Repository.Common;
 
 namespace Aplication.CQRS.Categories.Handler.CommmandHandlers;
 
-public class CreateCategoryCommandHandler:IRequestHandler<CreateCategoryCommandRequest,ResponseModel<CreateCategoryCommandResponse>>
+public class CreateCategoryCommandHandler : IRequestHandler<CreateCategoryCommandRequest, ResponseModel<CreateCategoryCommandResponse>>
 {
 	private readonly IUnitOfWork _unitOfWork;
 
@@ -31,7 +31,7 @@ public class CreateCategoryCommandHandler:IRequestHandler<CreateCategoryCommandR
 			Id = newCategory.Id,
 			Name = newCategory.Name
 		};
-		return new ResponseModel<CreateCategoryCommandResponse> { Data = response };
+		return new ResponseModel<CreateCategoryCommandResponse>(response);
 
 	}
 }

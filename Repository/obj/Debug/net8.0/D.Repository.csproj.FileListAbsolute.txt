@@ -13,3 +13,4 @@ C:\Users\isi\Desktop\MasterProject\StoreApp\Repository\bin\Debug\net8.0\C.Domain
 C:\Users\isi\Desktop\MasterProject\StoreApp\Repository\bin\Debug\net8.0\C.Domain.pdb
 C:\Users\isi\Desktop\MasterProject\StoreApp\Repository\obj\Debug\net8.0\D.Repository.csproj.AssemblyReference.cache
 C:\Users\isi\Desktop\MasterProject\StoreApp\Repository\obj\Debug\net8.0\D.Reposi.D58E6259.Up2Date
+C:\Users\isi\Desktop\MasterProject\StoreApp\Repository\obj\Debug\net8.0\D.Repository.sourcelink.json

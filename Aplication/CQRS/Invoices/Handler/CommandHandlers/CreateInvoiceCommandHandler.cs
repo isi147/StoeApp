@@ -55,7 +55,7 @@ public class CreateInvoiceCommandHandler : IRequestHandler<CreateInvoiceCommandR
 			}
 		));
 
-		return new ResponseModel<CreateInvoiceCommandResponse> { Data = response };
+		return new ResponseModel<CreateInvoiceCommandResponse>(response);
 
 
 	}

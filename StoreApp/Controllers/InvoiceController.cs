@@ -1,4 +1,5 @@
-﻿using Aplication.CQRS.Invoices.Command.Request;
+﻿using A.StoreApp.Constants;
+using Aplication.CQRS.Invoices.Command.Request;
 using Aplication.CQRS.Invoices.Query.Reqeust;
 using Aplication.CQRS.Products.Command.Request;
 using Aplication.CQRS.Products.Query.Request;
@@ -9,13 +10,13 @@ namespace A.StoreApp.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-[Authorize(Roles = "Admin,Cashier")]
+
+[Authorize(Roles = $"{UserRoles.Admin},{UserRoles.Cashier}")]
 
 
 public class InvoiceController : BaseController
 {
 	[HttpPost]
-
 	public async Task<IActionResult> AddAsync(CreateInvoiceCommandRequest request)
 	{
 		return Ok(await Sender.Send(request));
@@ -31,13 +32,15 @@ public class InvoiceController : BaseController
 	public async Task<IActionResult> Delete(int id)
 	{
 		var requst = new DeleteInvoiceCommandRequest(id);
-		return Ok(await Sender.Send(requst));
+		await Sender.Send(requst);
+		return Ok();
 	}
 
 	[HttpPut]
 	public async Task<IActionResult> Update(UpdateInvoiceCommandRequest request)
 	{
-		return Ok(await Sender.Send(request));
+		await Sender.Send(request);
+		return Ok();
 	}
 	[HttpGet]
 	[Route("{id}")]
@@ -48,7 +51,7 @@ public class InvoiceController : BaseController
 	}
 
 	[HttpPost]
-	[Route ("refund")]
+	[Route("refund")]
 	public async Task<IActionResult> CreateRefundInvoice(CreateRefundInvoiceCommandRequest request)
 	{
 		return Ok(await Sender.Send(request));

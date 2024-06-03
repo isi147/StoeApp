@@ -85,6 +85,6 @@ C:\Users\isi\Desktop\MasterProject\StoreApp\StoreApp\bin\Debug\net8.0\B.Common.p
 C:\Users\isi\Desktop\MasterProject\StoreApp\StoreApp\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\isi\Desktop\MasterProject\StoreApp\StoreApp\bin\Debug\net8.0\FluentValidation.dll
 C:\Users\isi\Desktop\MasterProject\StoreApp\StoreApp\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
-C:\Users\isi\Desktop\MasterProject\StoreApp\StoreApp\obj\Debug\net8.0\A.StoreApp.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\isi\Desktop\MasterProject\StoreApp\StoreApp\bin\Debug\net8.0\A.StoreApp.xml
 C:\Users\isi\Desktop\MasterProject\StoreApp\StoreApp\obj\Debug\net8.0\A.StoreApp.xml
+C:\Users\isi\Desktop\MasterProject\StoreApp\StoreApp\obj\Debug\net8.0\A.StoreApp.sourcelink.json
