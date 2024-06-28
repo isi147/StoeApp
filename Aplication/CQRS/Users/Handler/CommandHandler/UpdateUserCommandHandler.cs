@@ -1,10 +1,10 @@
-﻿using Aplication.CQRS.Auth.Command.Request;
+﻿using Aplication.CQRS.Users.Command.Request;
 using MediatR;
 using Repository.Common;
 
-namespace Aplication.CQRS.Auth.Handler.CommandHandler;
+namespace Aplication.CQRS.Users.Handler.CommandHandler;
 
-public class UpdateUserCommandHandler : IRequestHandler<UpdateUserCommandRequest>
+internal class UpdateUserCommandHandler : IRequestHandler<UpdateUserCommandRequest>
 {
 	private readonly IUnitOfWork _unitOfWork;
 

@@ -8,6 +8,7 @@ public interface IProductRepository
 	void Update(Product product);
 	void Delete(int id);
 	Task<Product> GetByIdAsync(int id);
+	Task<Product> GetByBarcodeAync(int barcode);
 	IQueryable<Product> GetAll();
 
 

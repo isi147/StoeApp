@@ -6,6 +6,6 @@ namespace Aplication.CQRS.Categories.Query.Request;
 
 public class GetAllCategoryQueryRequest:IRequest<Pagination<GetAllCategoryQueryResponse>>
 {
-    public int Limit { get; set; } = 10;
+    public int Limit { get; set; } = 15;
     public int Page { get; set; } = 1; 
 }

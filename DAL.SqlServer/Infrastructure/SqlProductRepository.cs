@@ -36,7 +36,15 @@ public class SqlProductRepository : BaseSqlRepository, IProductRepository
 		#endregion
 		return _context.Products.Where(p => p.IsDeleted == false).AsNoTracking();
 	}
-	
+
+
+	public async Task<Product> GetByBarcodeAync(int barcode)
+	{
+		var sql = $@"SELECT *FROM PRODUCTS  WHERE Barcode = @barcode AND IsDeleted= 0";
+		using var con = OpenConnection();
+		return await con.QueryFirstOrDefaultAsync<Product>(sql, new { barcode });
+	}
+
 	public async Task<Product> GetByIdAsync(int id)
 	{
 		var sql = $@"SELECT *FROM PRODUCTS  WHERE Id = @id AND IsDeleted= 0";

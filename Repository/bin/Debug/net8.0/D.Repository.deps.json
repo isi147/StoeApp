@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v8.0": {
       "D.Repository/1.0.0": {
         "dependencies": {
+          "B.Common": "1.0.0",
           "C.Domain": "1.0.0"
         },
         "runtime": {
@@ -86,6 +87,11 @@
           }
         }
       },
+      "B.Common/1.0.0": {
+        "runtime": {
+          "B.Common.dll": {}
+        }
+      },
       "C.Domain/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Abstractions": "8.0.0",
@@ -151,6 +157,11 @@
       "sha512": "sha512-taMjs3z9+tTYNhdD5g5XU89gMcqX7PSI6oji7yZXK8E4T1XjsZR5yDLdIqC1PVKYL5FAlrNWBNBaLshuESYHlw==",
       "path": "system.identitymodel.tokens.jwt/7.5.2",
       "hashPath": "system.identitymodel.tokens.jwt.7.5.2.nupkg.sha512"
+    },
+    "B.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "C.Domain/1.0.0": {
       "type": "project",

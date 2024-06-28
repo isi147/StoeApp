@@ -360,6 +360,9 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "C:\\Users\\isi\\Desktop\\MasterProject\\StoreApp\\Common\\B.Common.csproj": {
+                "projectPath": "C:\\Users\\isi\\Desktop\\MasterProject\\StoreApp\\Common\\B.Common.csproj"
+              },
               "C:\\Users\\isi\\Desktop\\MasterProject\\StoreApp\\Domain\\C.Domain.csproj": {
                 "projectPath": "C:\\Users\\isi\\Desktop\\MasterProject\\StoreApp\\Domain\\C.Domain.csproj"
               }

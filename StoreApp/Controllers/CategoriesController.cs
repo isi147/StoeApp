@@ -1,6 +1,6 @@
 ﻿using A.StoreApp.Constants;
-using Aplication.CQRS.Products.Command.Request;
-using Aplication.CQRS.Products.Query.Request;
+using Aplication.CQRS.Categories.Command.Request;
+using Aplication.CQRS.Categories.Query.Request;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,42 +8,39 @@ namespace A.StoreApp.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-
 [Authorize(Roles = $"{UserRoles.Admin},{UserRoles.Cashier}")]
-
-public class ProductController : BaseController
+public class CategoriesController : BaseController
 {
 	[HttpPost]
-
-	public async Task<IActionResult> AddAsync(CreateProductCommandRequest request)
+	public async Task<IActionResult> AddAsync(CreateCategoryCommandRequest request)
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 	{
 		return Ok(await Sender.Send(request));
 	}
 
 	[HttpGet]
-	[Authorize(Roles = $"{UserRoles.Admin},{UserRoles.Cashier},{UserRoles.Customer}")]
-	public async Task<IActionResult> GetAll([FromQuery] GetAllProductQueryRequest request)
+	public async Task<IActionResult> GetAll([FromQuery] GetAllCategoryQueryRequest request)
 	{
 		return Ok(await Sender.Send(request));
 	}
-
-	[HttpGet("{id}")]
+	[HttpGet]
+	[Route("{id}")]
 	public async Task<IActionResult> GetById(int id)
 	{
-		var request = new GetByIdProductQueryRequest(id);
+		var request = new GetByIdCategoryQueryRequest(id);
 		return Ok(await Sender.Send(request));
 	}
 
 	[HttpDelete("{id}")]
 	public async Task<IActionResult> Delete(int id)
 	{
-		var requst = new DeleteProductCommandRequest(id);
+		var requst = new DeleteCategoryCommandRequest(id);
 		await Sender.Send(requst);
 		return Ok();
 	}
 
 	[HttpPut]
-	public async Task<IActionResult> Update(UpdateProductCommandRequest request)
+	public async Task<IActionResult> Update(UpdateCategoryCommandRequest request)// id gotursun
 	{
 		await Sender.Send(request);
 		return Ok();

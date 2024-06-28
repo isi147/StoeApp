@@ -115,6 +115,16 @@
           }
         }
       },
+      "B.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/B.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/B.Common.dll": {}
+        }
+      },
       "C.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -307,6 +317,11 @@
         "system.identitymodel.tokens.jwt.nuspec"
       ]
     },
+    "B.Common/1.0.0": {
+      "type": "project",
+      "path": "../Common/B.Common.csproj",
+      "msbuildProject": "../Common/B.Common.csproj"
+    },
     "C.Domain/1.0.0": {
       "type": "project",
       "path": "../Domain/C.Domain.csproj",
@@ -315,6 +330,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "B.Common >= 1.0.0",
       "C.Domain >= 1.0.0"
     ]
   },
@@ -350,6 +366,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+            "C:\\Users\\isi\\Desktop\\MasterProject\\StoreApp\\Common\\B.Common.csproj": {
+              "projectPath": "C:\\Users\\isi\\Desktop\\MasterProject\\StoreApp\\Common\\B.Common.csproj"
+            },
             "C:\\Users\\isi\\Desktop\\MasterProject\\StoreApp\\Domain\\C.Domain.csproj": {
               "projectPath": "C:\\Users\\isi\\Desktop\\MasterProject\\StoreApp\\Domain\\C.Domain.csproj"
             }

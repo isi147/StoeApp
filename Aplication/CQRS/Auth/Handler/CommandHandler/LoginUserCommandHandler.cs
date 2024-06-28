@@ -14,6 +14,7 @@ namespace Aplication.CQRS.Auth.Handler.CommandHandler;
 
 public class LoginUserCommandHandler : IRequestHandler<LoginUserCommandRequest, ResponseModel<LoginUserCommandResponse>>
 {
+
 	private readonly IUnitOfWork _unitOfWork;
 	private readonly IConfiguration _configuration;
 
@@ -34,7 +35,7 @@ public class LoginUserCommandHandler : IRequestHandler<LoginUserCommandRequest, 
 
 		//if ( (hashedPassword == null)) // loginde validator ile yoxla 
 		//	throw new BadRequestException();
-		if (user.PasswordHash != user.PasswordHash)
+		if (user.PasswordHash != hashedPassword)
 		{
 			throw new BadRequestException();//bu yoxlam aucndur eslinde bu olmalidi InvalideCredentialsException
 		}

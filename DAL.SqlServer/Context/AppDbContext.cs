@@ -16,6 +16,7 @@ public class AppDbContext : DbContext
 	public DbSet<Category> Categories { get; set; }
 	public DbSet<User> Users { get; set; }
 	public DbSet<Invoice> Invoices { get; set; }
+	public DbSet<SentEmail> Emails { get; set; }
 
 
 }

@@ -4,15 +4,20 @@ using Common.Exceptions;
 using Common.GlobalExceptionsResponses.Generics;
 using Domain.Entity;
 using Domain.Extensions;
+using Domain.Helper;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using Repository.Common;
+using System.Net;
+using System.Net.Mail;
 
 namespace Aplication.CQRS.Auth.Handler.CommandHandler;
 
 public class RegistrationUserCommandHandler : IRequestHandler<RegistrationUserCommandRequest, ResponseModel<RegistrationUserCommandResponse>>
 {
 	private readonly IUnitOfWork _unitOfWork;
+
+
 
 	public RegistrationUserCommandHandler(IUnitOfWork unitOfWork)
 	{
@@ -21,6 +26,11 @@ public class RegistrationUserCommandHandler : IRequestHandler<RegistrationUserCo
 
 	public async Task<ResponseModel<RegistrationUserCommandResponse>> Handle(RegistrationUserCommandRequest request, CancellationToken cancellationToken)
 	{
+		var otp = await _unitOfWork.SentEmailRepository.GetAsync(request.OtpCode);
+		if (otp == null)
+		{
+			throw new BadRequestException();
+		}
 		var user = await _unitOfWork.UserRepository.GetUserByEmailAsync(request.Email);
 		if (user != null)
 		{
@@ -36,7 +46,10 @@ public class RegistrationUserCommandHandler : IRequestHandler<RegistrationUserCo
 			PasswordHash = hashedPassword,
 			CreatedDate = DateTime.Now,
 		};
+
+
 		await _unitOfWork.UserRepository.RegisterAsync(newUser);
+		otp.IsUsed = true;
 		await _unitOfWork.SaveChangesAsync();
 		var response = new RegistrationUserCommandResponse()
 		{

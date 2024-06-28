@@ -88,3 +88,4 @@ C:\Users\isi\Desktop\MasterProject\StoreApp\StoreApp\bin\Debug\net8.0\FluentVali
 C:\Users\isi\Desktop\MasterProject\StoreApp\StoreApp\bin\Debug\net8.0\A.StoreApp.xml
 C:\Users\isi\Desktop\MasterProject\StoreApp\StoreApp\obj\Debug\net8.0\A.StoreApp.xml
 C:\Users\isi\Desktop\MasterProject\StoreApp\StoreApp\obj\Debug\net8.0\A.StoreApp.sourcelink.json
+C:\Users\isi\Desktop\MasterProject\StoreApp\StoreApp\obj\Debug\net8.0\A.StoreApp.MvcApplicationPartsAssemblyInfo.cs

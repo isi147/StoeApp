@@ -1,4 +1,5 @@
 ﻿using Aplication.CQRS.Auth.Command.Request;
+using Aplication.CQRS.Users.Command.Request;
 using FluentValidation;
 
 namespace Aplication.Validators.UserValidators;

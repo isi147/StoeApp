@@ -1,6 +1,7 @@
 ﻿using MediatR;
 
-namespace Aplication.CQRS.Auth.Command.Request;
+namespace Aplication.CQRS.Users.Command.Request;
+
 
 public class UpdateUserCommandRequest : IRequest
 {
@@ -9,5 +10,6 @@ public class UpdateUserCommandRequest : IRequest
 	public string Surname { get; set; }
 	public string Email { get; set; }
 
-
 }
+
+

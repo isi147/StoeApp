@@ -1,4 +1,7 @@
-﻿using Aplication.PipelineBehaviors;
+﻿using Aplication.Abstractions;
+using Aplication.PipelineBehaviors;
+using Aplication.Security;
+using Aplication.Services;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,6 +16,8 @@ public static class DependencyInjection
 		services.AddMediatR(c => c.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
 		services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 		services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationPipelineBehavior<,>));
+		services.AddScoped<IAuthService, AuthService>();
+		services.AddScoped<ISentEmailService, SentEmailService>();
 
 		return services;
 	}

@@ -19,6 +19,7 @@ public class SqlUnitOfWork : IUnitOfWork
 	public SqlCategoryRepository _categoryRepository;
 	public SqlUserRepository _userRepository;
 	public SqlInvoiceRepository _invoiceRepository;
+	public SqlSendEmailRepository _sendEmailRepository;
 
 	public IProductRepository ProductRepository => _productRepository ??= new SqlProductRepository(_connectionString, _context);
 
@@ -28,7 +29,7 @@ public class SqlUnitOfWork : IUnitOfWork
 
 	public IInvoiceRepository InvoiceRepository => _invoiceRepository ??= new SqlInvoiceRepository(_connectionString, _context);
 
-
+	public ISentEmailRepository SentEmailRepository => _sendEmailRepository ??= new SqlSendEmailRepository(_connectionString, _context);
 	public async Task SaveChangesAsync()
 	{
 		await _context.SaveChangesAsync();

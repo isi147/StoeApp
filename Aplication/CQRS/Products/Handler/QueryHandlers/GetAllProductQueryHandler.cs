@@ -44,8 +44,7 @@ public class GetAllProductQueryHandler : IRequestHandler<GetAllProductQueryReque
 				Name = category.Name,
 				Id = category.Id,
 				CategoryId = category.CategoryId,
-
-
+				Barcode = category.Barcode
 			};
 			list.Add(mappedCategory);
 		}

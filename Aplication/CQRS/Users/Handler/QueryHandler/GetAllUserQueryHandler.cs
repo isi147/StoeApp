@@ -1,13 +1,13 @@
-﻿using Aplication.CQRS.Auth.Query.Request;
-using Aplication.CQRS.Auth.Query.Response;
+﻿using Aplication.CQRS.Users.Query.Request;
+using Aplication.CQRS.Users.Query.Response;
 using Common.GlobalExceptionsResponses.Generics;
 using Domain.Extensions;
 using MediatR;
 using Repository.Common;
 
-namespace Aplication.CQRS.Auth.Handler.QueryHandler;
+namespace Aplication.CQRS.Users.Handler.QueryHandler;
 
-public class GetAllUserQueryHandler : IRequestHandler<GetAllUserQueryRequest, Pagination<GetAllUserQueryResponse>>
+public class GetAllUserQueryHandler: IRequestHandler<GetAllUserQueryRequest, Pagination<GetAllUserQueryResponse>>
 {
 	private readonly IUnitOfWork _unitOfWork;
 

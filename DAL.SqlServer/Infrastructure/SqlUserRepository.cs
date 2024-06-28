@@ -37,9 +37,13 @@ public class SqlUserRepository : BaseSqlRepository, IUserRepository
 
 	public async Task<User> GetUserByEmailAsync(string email)
 	{
-		var sql = $@"SELECT *FROM Users Where email = @email AND IsDeleted = 0";
-		using var con = OpenConnection();
-		return await con.QueryFirstOrDefaultAsync<User>(sql, new { email }) ?? throw new NotFoundException();
+		//var sql = $@"SELECT *FROM Users Where email = @email AND IsDeleted = 0";
+		//using var con = OpenConnection();
+		//return await con.QueryFirstOrDefaultAsync<User>(sql, new { email });
+
+		var user = await _context.Users.FirstOrDefaultAsync(x => x.Email == email && x.IsDeleted == false);
+
+		return user;
 	}
 
 	public async Task RegisterAsync(User user)

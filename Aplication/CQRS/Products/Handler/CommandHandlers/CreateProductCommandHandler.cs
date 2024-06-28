@@ -25,7 +25,8 @@ public class CreateProductCommandHandler : IRequestHandler<CreateProductCommandR
 			Description = request.Description,
 			Price = request.Price,
 			CategoryId = request.CategoryId,
-			CreatedDate = DateTime.Now
+			CreatedDate = DateTime.Now,
+			Barcode = request.Barcode
 		};
 		await _unitOfWork.ProductRepository.AddAsync(newProduct);
 		await _unitOfWork.SaveChangesAsync();
@@ -35,8 +36,8 @@ public class CreateProductCommandHandler : IRequestHandler<CreateProductCommandR
 			Name = newProduct.Name,
 			Description = newProduct.Description,
 			Price = newProduct.Price,
-			CategoryId = newProduct.CategoryId
-
+			CategoryId = newProduct.CategoryId,
+			Barcode = newProduct.Barcode
 		};
 
 		return new ResponseModel<CreateProductCommandResponse>(response);

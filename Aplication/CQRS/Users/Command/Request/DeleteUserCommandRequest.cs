@@ -1,6 +1,5 @@
 ﻿using MediatR;
 
-namespace Aplication.CQRS.Auth.Command.Request;
+namespace Aplication.CQRS.Users.Command.Request;
 
 public record DeleteUserCommandRequest(int Id) : IRequest;
-

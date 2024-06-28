@@ -1,6 +1,6 @@
 ﻿using Domain.Enums;
 
-namespace Aplication.CQRS.Auth.Query.Response;
+namespace Aplication.CQRS.Users.Query.Response;
 
 public class GetAllUserQueryResponse
 {
@@ -8,5 +8,5 @@ public class GetAllUserQueryResponse
 	public string Name { get; set; }
 	public string Surname { get; set; }
 	public string Email { get; set; }
-    public UserType	UserType { get; set; }
+	public UserType UserType { get; set; }
 }

@@ -1,68 +1,15 @@
 [
   {
     "ContainingType": "A.StoreApp.Controllers.AuthController",
-    "Method": "Update",
-    "RelativePath": "api/Auth",
-    "HttpMethod": "PUT",
+    "Method": "ForgetPassword",
+    "RelativePath": "api/Auth/ForgetPassword/otp",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "request",
-        "Type": "Aplication.CQRS.Auth.Command.Request.UpdateUserCommandRequest",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "A.StoreApp.Controllers.AuthController",
-    "Method": "GetAll",
-    "RelativePath": "api/Auth",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Limit",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Page",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "A.StoreApp.Controllers.AuthController",
-    "Method": "Delete",
-    "RelativePath": "api/Auth/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "A.StoreApp.Controllers.AuthController",
-    "Method": "GetById",
-    "RelativePath": "api/Auth/getById/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
+        "Name": "forgetPasswordDto",
+        "Type": "Aplication.DTOs.ForgetPasswordDto",
         "IsRequired": true
       }
     ],
@@ -86,6 +33,22 @@
   },
   {
     "ContainingType": "A.StoreApp.Controllers.AuthController",
+    "Method": "SendRegisterOtp",
+    "RelativePath": "api/Auth/Register/Otp",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Aplication.DTOs.SendRegisterOtpDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "A.StoreApp.Controllers.AuthController",
     "Method": "Registration",
     "RelativePath": "api/Auth/Registration",
     "HttpMethod": "POST",
@@ -101,9 +64,41 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "A.StoreApp.Controllers.CategoryController",
+    "ContainingType": "A.StoreApp.Controllers.AuthController",
+    "Method": "ResetPassword",
+    "RelativePath": "api/Auth/ResetPassword",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Aplication.DTOs.ResetPasswordDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "A.StoreApp.Controllers.AuthController",
+    "Method": "ValidationEmail",
+    "RelativePath": "api/Auth/ValidationEmail",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "validationDto",
+        "Type": "Aplication.DTOs.ValidateEmailDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "A.StoreApp.Controllers.CategoriesController",
     "Method": "AddAsync",
-    "RelativePath": "api/Category",
+    "RelativePath": "api/Categories",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -117,9 +112,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "A.StoreApp.Controllers.CategoryController",
+    "ContainingType": "A.StoreApp.Controllers.CategoriesController",
     "Method": "GetAll",
-    "RelativePath": "api/Category",
+    "RelativePath": "api/Categories",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -138,9 +133,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "A.StoreApp.Controllers.CategoryController",
+    "ContainingType": "A.StoreApp.Controllers.CategoriesController",
     "Method": "Update",
-    "RelativePath": "api/Category",
+    "RelativePath": "api/Categories",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -154,9 +149,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "A.StoreApp.Controllers.CategoryController",
+    "ContainingType": "A.StoreApp.Controllers.CategoriesController",
     "Method": "GetById",
-    "RelativePath": "api/Category/{id}",
+    "RelativePath": "api/Categories/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -170,9 +165,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "A.StoreApp.Controllers.CategoryController",
+    "ContainingType": "A.StoreApp.Controllers.CategoriesController",
     "Method": "Delete",
-    "RelativePath": "api/Category/{id}",
+    "RelativePath": "api/Categories/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -186,9 +181,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "A.StoreApp.Controllers.InvoiceController",
+    "ContainingType": "A.StoreApp.Controllers.InvoiceControllers",
     "Method": "AddAsync",
-    "RelativePath": "api/Invoice",
+    "RelativePath": "api/InvoiceControllers",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -202,9 +197,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "A.StoreApp.Controllers.InvoiceController",
+    "ContainingType": "A.StoreApp.Controllers.InvoiceControllers",
     "Method": "GetAll",
-    "RelativePath": "api/Invoice",
+    "RelativePath": "api/InvoiceControllers",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -223,9 +218,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "A.StoreApp.Controllers.InvoiceController",
+    "ContainingType": "A.StoreApp.Controllers.InvoiceControllers",
     "Method": "Update",
-    "RelativePath": "api/Invoice",
+    "RelativePath": "api/InvoiceControllers",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -239,9 +234,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "A.StoreApp.Controllers.InvoiceController",
+    "ContainingType": "A.StoreApp.Controllers.InvoiceControllers",
     "Method": "Delete",
-    "RelativePath": "api/Invoice/{id}",
+    "RelativePath": "api/InvoiceControllers/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -255,9 +250,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "A.StoreApp.Controllers.InvoiceController",
+    "ContainingType": "A.StoreApp.Controllers.InvoiceControllers",
     "Method": "GetById",
-    "RelativePath": "api/Invoice/{id}",
+    "RelativePath": "api/InvoiceControllers/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -271,9 +266,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "A.StoreApp.Controllers.InvoiceController",
+    "ContainingType": "A.StoreApp.Controllers.InvoiceControllers",
     "Method": "CreateRefundInvoice",
-    "RelativePath": "api/Invoice/refund",
+    "RelativePath": "api/InvoiceControllers/refund",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -287,9 +282,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "A.StoreApp.Controllers.ProductController",
+    "ContainingType": "A.StoreApp.Controllers.ProductsController",
     "Method": "AddAsync",
-    "RelativePath": "api/Product",
+    "RelativePath": "api/Products",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -303,9 +298,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "A.StoreApp.Controllers.ProductController",
+    "ContainingType": "A.StoreApp.Controllers.ProductsController",
     "Method": "GetAll",
-    "RelativePath": "api/Product",
+    "RelativePath": "api/Products",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -324,9 +319,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "A.StoreApp.Controllers.ProductController",
+    "ContainingType": "A.StoreApp.Controllers.ProductsController",
     "Method": "Update",
-    "RelativePath": "api/Product",
+    "RelativePath": "api/Products",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -340,9 +335,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "A.StoreApp.Controllers.ProductController",
+    "ContainingType": "A.StoreApp.Controllers.ProductsController",
     "Method": "GetById",
-    "RelativePath": "api/Product/{id}",
+    "RelativePath": "api/Products/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -356,10 +351,95 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "A.StoreApp.Controllers.ProductController",
+    "ContainingType": "A.StoreApp.Controllers.ProductsController",
     "Method": "Delete",
-    "RelativePath": "api/Product/{id}",
+    "RelativePath": "api/Products/{id}",
     "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "A.StoreApp.Controllers.ProductsController",
+    "Method": "GetByBarcode",
+    "RelativePath": "api/Products/barcode/{barcode}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "barcode",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "A.StoreApp.Controllers.UsersController",
+    "Method": "Update",
+    "RelativePath": "api/Users",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Aplication.CQRS.Users.Command.Request.UpdateUserCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "A.StoreApp.Controllers.UsersController",
+    "Method": "GetAll",
+    "RelativePath": "api/Users",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Limit",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "A.StoreApp.Controllers.UsersController",
+    "Method": "Delete",
+    "RelativePath": "api/Users/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "A.StoreApp.Controllers.UsersController",
+    "Method": "GetById",
+    "RelativePath": "api/Users/getById/{id}",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [

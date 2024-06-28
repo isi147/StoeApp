@@ -1,10 +1,9 @@
-﻿namespace Aplication.CQRS.Auth.Query.Response;
+﻿namespace Aplication.CQRS.Users.Query.Response;
 
-public class GetByIdUseryQueryResponse
+public class GetByIdUserQueryResponse
 {
 	public int Id { get; set; }
 	public string Name { get; set; }
 	public string Surname { get; set; }
 	public string Email { get; set; }
-
 }

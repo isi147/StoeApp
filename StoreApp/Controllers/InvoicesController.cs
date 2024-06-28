@@ -14,7 +14,7 @@ namespace A.StoreApp.Controllers;
 [Authorize(Roles = $"{UserRoles.Admin},{UserRoles.Cashier}")]
 
 
-public class InvoiceController : BaseController
+public class InvoiceControllers : BaseController
 {
 	[HttpPost]
 	public async Task<IActionResult> AddAsync(CreateInvoiceCommandRequest request)

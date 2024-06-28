@@ -232,6 +232,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "B.Common": "1.0.0",
           "C.Domain": "1.0.0"
         },
         "compile": {

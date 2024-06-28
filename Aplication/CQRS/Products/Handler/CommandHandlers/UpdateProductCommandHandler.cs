@@ -29,6 +29,7 @@ public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommandR
 		currentProduct.Name = request.Name;
 		currentProduct.Price = request.Price;
 		currentProduct.CategoryId = request.CategoryId;
+		currentProduct.Barcode = request.Barcode;
 
 		_unitOfWork.ProductRepository.Update(currentProduct);
 		await _unitOfWork.SaveChangesAsync();
